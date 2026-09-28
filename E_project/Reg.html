@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Wedding Plan Manager</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #eed89d;
+            --secondary: #d4a5b5;
+            --accent: #6d4714;
+            --dark: #3a3a3a;
+            --light: #fff9fb;
+            --success: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .registration-hero {
+            background: url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .registration-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .registration-section {
+            padding: 60px 0;
+        }
+        
+        .registration-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .registration-info {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .registration-info h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .benefits-list {
+            list-style-type: none;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .benefits-list i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+        
+        .registration-form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-header {
+            margin-bottom: 25px;
+        }
+        
+        .form-header h2 {
+            font-size: 28px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: var(--dark);
+        }
+        
+        .registration-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .registration-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .registration-form .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .registration-form .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(231, 84, 128, 0.2);
+        }
+        
+        .name-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        .terms-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .terms-group input {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .terms-group label {
+            font-weight: normal;
+        }
+        
+        .terms-group a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .terms-group a:hover {
+            text-decoration: underline;
+        }
+        
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            font-weight: 600;
+        }
+        
+        .submit-btn:hover {
+            background: #d43d6d;
+            transform: translateY(-2px);
+        }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .login-link a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #ddd;
+            z-index: 1;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #ddd;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .step.active .step-number {
+            background: var(--accent);
+        }
+        
+        .step.completed .step-number {
+            background: var(--success);
+        }
+        
+        .step.completed .step-number::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+        
+        .step-label {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .step.active .step-label {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .step.completed .step-label {
+            color: var(--success);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            
+            .hero-content p {
+                font-size: 16px;
+            }
+            
+            .name-fields {
+                grid-template-columns: 1fr;
+            }
+            
+            .progress-steps {
+                margin-bottom: 20px;
+            }
+            
+            .step-label {
+                font-size: 12px;
+            }
+        }
+
+        :root {
+            --primary: #e8c9bd;
+            --secondary: #704353;
+            --accent: #542b3b;
+            --dark: #30232a;
+            --light: #fbf7f2;
+            --success: #66866b;
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .registration-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 600;
+            padding: 14px 0;
+            background: rgba(48, 35, 42, 0.96);
+            box-shadow: 0 8px 30px rgba(34, 20, 27, 0.14);
+            backdrop-filter: blur(14px);
+        }
+
+        .registration-nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            gap: 10px;
+            color: #fff;
+            font-family: 'Great Vibes', cursive;
+            font-size: 34px;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        .registration-nav .logo span {
+            color: #e8c9bd;
+        }
+
+        .registration-nav .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .registration-nav .nav-links li {
+            margin: 0;
+        }
+
+        .registration-nav .nav-links a {
+            display: inline-block;
+            padding: 9px 15px;
+            border-radius: 999px;
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .registration-nav .nav-links a:hover,
+        .registration-nav .nav-links a:focus-visible {
+            transform: translateY(-1px);
+            background: rgba(232, 201, 189, 0.18);
+            color: #fff;
+            outline: none;
+        }
+
+        .registration-nav .mobile-menu {
+            display: none;
+            padding: 8px;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .registration-hero {
+            height: 230px;
+            background: linear-gradient(90deg, rgba(35, 22, 29, 0.82), rgba(35, 22, 29, 0.3)), url("bg.png") center 48% / cover;
+        }
+
+        .registration-hero::before {
+            display: none;
+        }
+
+        .hero-content {
+            width: min(850px, calc(100% - 40px));
+        }
+
+        .hero-content h1 {
+            margin-bottom: 10px;
+            color: #fffaf6;
+            font-size: clamp(2rem, 4.5vw, 3.25rem);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            line-height: 1.15;
+        }
+
+        .hero-content p {
+            color: rgba(255, 250, 246, 0.88);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .registration-section {
+            padding: 34px 0 52px;
+        }
+
+        .registration-container {
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            align-items: start;
+            gap: 24px;
+            max-width: 1060px;
+        }
+
+        .registration-info,
+        .registration-form-container {
+            padding: 25px;
+            border: 1px solid rgba(84, 43, 59, 0.08);
+            border-radius: 15px;
+            box-shadow: 0 12px 36px rgba(48, 35, 42, 0.08);
+        }
+
+        .registration-info {
+            background: linear-gradient(145deg, #542b3b, #704353);
+            color: #fffaf6;
+        }
+
+        .registration-info h2 {
+            margin-bottom: 18px;
+            color: #fffaf6;
+            font-size: 1.55rem;
+            font-weight: 500;
+        }
+
+        .benefits-list li {
+            gap: 10px;
+            margin-bottom: 13px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .benefits-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefits-list i {
+            flex: 0 0 auto;
+            margin: 2px 0 0;
+            color: #f0d3c4;
+            font-size: 0.95rem;
+        }
+
+        .benefits-list strong {
+            display: block;
+            margin-bottom: 2px;
+            color: #fffaf6;
+            font-weight: 600;
+        }
+
+        .benefits-list p {
+            color: rgba(255, 250, 246, 0.75);
+            font-size: 0.82rem;
+        }
+
+        .registration-form-container {
+            background: #fff;
+        }
+
+        .form-header {
+            margin-bottom: 18px;
+        }
+
+        .form-header h2 {
+            margin-bottom: 4px;
+            color: var(--dark);
+            font-size: 1.65rem;
+            font-weight: 500;
+        }
+
+        .form-header p {
+            color: #71636a;
+            font-size: 0.88rem;
+        }
+
+        .progress-steps {
+            margin-bottom: 22px;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: #e8ddd8;
+            color: #71636a;
+            font-size: 0.82rem;
+        }
+
+        .progress-steps::before {
+            top: 14px;
+            background: #e8ddd8;
+        }
+
+        .step-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+        }
+
+        .registration-form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 14px;
+            row-gap: 11px;
+        }
+
+        .registration-form .name-fields,
+        .registration-form > .form-group:nth-child(6),
+        .registration-form > .terms-group,
+        .registration-form > .submit-btn,
+        .registration-form > .login-link {
+            grid-column: 1 / -1;
+        }
+
+        .registration-form .name-fields {
+            gap: 14px;
+        }
+
+        .registration-form .form-group {
+            min-width: 0;
+            margin: 0;
+        }
+
+        .registration-form label {
+            margin-bottom: 5px;
+            color: #51434a;
+            font-size: 0.79rem;
+            font-weight: 600;
+        }
+
+        .registration-form .form-control {
+            min-height: 42px;
+            padding: 9px 12px;
+            border: 1px solid #e8ddd7;
+            border-radius: 8px;
+            background: #fdfbf9;
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.88rem;
+        }
+
+        .registration-form .form-control:focus {
+            border-color: #8c5968;
+            box-shadow: 0 0 0 3px rgba(140, 89, 104, 0.12);
+        }
+
+        .password-toggle {
+            right: 12px;
+            color: #8c747e;
+        }
+
+        .terms-group {
+            margin: 2px 0 0;
+            font-size: 0.78rem;
+        }
+
+        .terms-group label {
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .terms-group a,
+        .login-link a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .submit-btn {
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: var(--accent);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            background: #704353;
+        }
+
+        .login-link {
+            margin-top: 0;
+            color: #71636a;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            padding: 18px 0;
+            background: var(--dark);
+            color: rgba(245, 237, 232, 0.75);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .registration-nav .mobile-menu {
+                display: block;
+            }
+
+            .registration-nav .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                flex-direction: column;
+                gap: 4px;
+                padding: 14px 20px 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(48, 35, 42, 0.98);
+                box-shadow: 0 16px 24px rgba(34, 20, 27, 0.2);
+            }
+
+            .registration-nav .nav-links.active {
+                display: flex;
+            }
+
+            .registration-nav .nav-links li {
+                margin: 4px 0;
+            }
+
+            .registration-nav .nav-links a {
+                min-width: 150px;
+                text-align: center;
+            }
+
+            .registration-hero {
+                height: 205px;
+            }
+
+            .registration-section {
+                padding: 24px 0 38px;
+            }
+
+            .registration-container {
+                grid-template-columns: 1fr;
+                gap: 17px;
+                max-width: 580px;
+            }
+
+            .registration-info,
+            .registration-form-container {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .registration-hero {
+                height: 190px;
+            }
+
+            .registration-form {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-form .name-fields,
+            .registration-form > .form-group,
+            .registration-form > .terms-group,
+            .registration-form > .submit-btn,
+            .registration-form > .login-link {
+                grid-column: 1;
+            }
+
+            .registration-form .name-fields {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .step-label {
+                font-size: 0.66rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="registration-nav" aria-label="Main navigation">
+        <div class="container">
+            <a href="Home.html" class="logo">Elegant<span>Weddings</span></a>
+            <button class="mobile-menu" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="gal.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="registration-hero">
+        <div class="hero-content">
+            <h1>Start Planning Your Perfect Wedding</h1>
+            <p>Create your account to access our comprehensive wedding planning tools</p>
+        </div>
+    </section>
+    
+    <section class="registration-section">
+        <div class="container">
+            <div class="registration-container">
+                <div class="registration-info">
+                    <h2>Why Register With Us?</h2>
+                    <ul class="benefits-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Complete Wedding Planner</strong>
+                                <p>Manage all aspects of your wedding in one place</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Budget Tracker</strong>
+                                <p>Keep your wedding expenses organized and under control</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Vendor Management</strong>
+                                <p>Connect with trusted vendors and manage contracts</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Guest List Manager</strong>
+                                <p>Track RSVPs, meals, and seating arrangements</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Timeline Creator</strong>
+                                <p>Build and share your wedding day schedule</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Mobile Access</strong>
+                                <p>Plan on-the-go with our mobile-friendly platform</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="registration-form-container">
+                    <div class="form-header">
+                        <h2>Create Your Account</h2>
+                        <p>Join thousands of couples planning their dream weddings</p>
+                    </div>
+                    
+                    <div class="progress-steps">
+                        <div class="step active">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Account Info</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Wedding Details</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Complete</div>
+                        </div>
+                    </div>
+                    
+                    <form class="registration-form" id="weddingRegistrationForm">
+                        <div class="name-fields">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input type="text" id="firstName" name="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input type="text" id="lastName" name="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Create Password*</label>
+                            <div class="password-container">
+                                <input type="password" id="password" name="password" class="form-control" required>
+                                <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password*</label>
+                            <div class="password-container">
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                                <i class="fas fa-eye password-toggle" id="toggleConfirmPassword"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Are you planning for*</label>
+                            <div style="display: flex; gap: 15px; margin-top: 8px;">
+                                <label style="display: flex; align-items: center;">
+                                    <input type="radio" name="planningFor" value="myself" checked style="margin-right: 5px;">
+                                    Myself
+                                </label>
+                                <label style="display: flex; align-items: center;">
+                                    <input type="radio" name="planningFor" value="someone-else" style="margin-right: 5px;">
+                                    Someone Else
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="terms-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>*</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Continue to Wedding Details</button>
+                        
+                        <div class="login-link">
+                            Already have an account? <a href="login.html">Log in</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+          <div class="copyright">
+                <p>&copy; 2025 Elegant Weddings. All Rights Reserved.</p>
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+        
+        const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+        const confirmPassword = document.querySelector('#confirmPassword');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+        
+        toggleConfirmPassword.addEventListener('click', function() {
+            const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPassword.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+        
+        // Form validation
+        document.getElementById('weddingRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate passwords match
+            if (password.value !== confirmPassword.value) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // If validation passes, proceed to next step
+            alert('Account information saved! Redirecting to wedding details...');
+            // In a real application, you would submit the form or navigate to next step
+        });
+    </script>
+</body>
+</html>

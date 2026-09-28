@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#30232a">
+    <meta name="description" content="Get in touch with Elegant Weddings in Kandy to start planning your celebration.">
+    <title>Contact Us | Elegant Weddings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="service-pages.css">
+    <link rel="stylesheet" href="story-pages.css">
+</head>
+<body class="detail-page story-page contact-fullscreen">
+    <nav aria-label="Main navigation">
+        <div class="container">
+            <a href="Home.html" class="logo">Elegant<span>Weddings</span></a>
+            <button class="mobile-menu" type="button" aria-label="Open navigation menu" aria-expanded="false"><i class="fas fa-bars" aria-hidden="true"></i></button>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li><li><a href="Services.html">Services</a></li>
+                <li><a href="About.html">About</a></li><li><a href="gal.html">Gallery</a></li>
+                <li><a href="Contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="contact-screen">
+            <div class="contact-layout">
+                <aside class="contact-card">
+                    <p class="detail-eyebrow">Your story starts here</p>
+                    <h1>We’d love to hear what you’re dreaming of.</h1>
+                    <p class="contact-card-intro">Tell us a little about your plans. We’re here to help you take the next step.</p>
+                    <a class="contact-method" href="tel:+94784543521">
+                        <span class="contact-method-icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+                        <span><small>Call us</small><strong>+94 78 454 3521</strong></span>
+                    </a>
+                    <a class="contact-method" href="mailto:wgadissanayake@gmail.com">
+                        <span class="contact-method-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                        <span><small>Email us</small><strong>wgadissanayake@gmail.com</strong></span>
+                    </a>
+                    <div class="contact-method">
+                        <span class="contact-method-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></span>
+                        <span><small>Visit us</small><strong>37, Kurunegala Road, Kandy</strong></span>
+                    </div>
+                    <div class="contact-hours"><i class="far fa-clock" aria-hidden="true"></i><span><strong>We’re here for you</strong><br>Monday–Friday: 9am–6pm<br>Saturday: 10am–4pm</span></div>
+                    <a class="contact-whatsapp" href="https://wa.me/94784543521" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat with us on WhatsApp</a>
+                </aside>
+
+                <section class="contact-form-card" aria-labelledby="contact-form-title">
+                    <p class="detail-eyebrow">Let's talk about your day</p>
+                    <h2 id="contact-form-title">Tell us what you have in mind</h2>
+                    <p class="contact-form-intro">A few details will help us get back to you with the right information.</p>
+                    <form id="weddingContactForm">
+                        <div class="contact-form-row">
+                            <div class="contact-field">
+                                <label for="name">Your name</label>
+                                <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" required>
+                            </div>
+                            <div class="contact-field">
+                                <label for="email">Email address</label>
+                                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="contact-form-row">
+                            <div class="contact-field">
+                                <label for="phone">Phone number <span>(optional)</span></label>
+                                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+94">
+                            </div>
+                            <div class="contact-field">
+                                <label for="weddingDate">Wedding date <span>(if known)</span></label>
+                                <input id="weddingDate" name="weddingDate" type="date">
+                            </div>
+                        </div>
+                        <div class="contact-field">
+                            <label for="message">Tell us about your plans</label>
+                            <textarea id="message" name="message" rows="5" placeholder="What are you dreaming of for your day?" required></textarea>
+                        </div>
+                        <button class="detail-cta contact-submit" type="submit">Send your note <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        <p id="contactFormStatus" class="contact-form-status" role="status" aria-live="polite"></p>
+                        <p class="contact-form-note">This form is a preview and does not send messages yet. For a reply, please call or email us directly.</p>
+                    </form>
+                </section>
+            </div>
+            <footer class="contact-screen-footer">
+                <a href="Home.html">Elegant Weddings</a>
+                <span>&copy; 2025 · Made with love in Sri Lanka</span>
+            </footer>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="story-pages.js"></script>
+</body>
+</html>

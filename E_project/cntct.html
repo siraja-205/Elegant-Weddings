@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverAfter - Wedding Planning Contact</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #796142;
+            --secondary: #967f5d;
+            --accent: #bd823f;
+            --dark: #534530;
+            --light: #fcdaa8;
+            --text: #e0ab48;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            background-color: #fff9fb;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #fae5ac;
+            transform: scale(1.05);
+        }
+
+        .logo span {
+            color: #fae5ac;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fae5ac;
+            background-color: rgba(250, 229, 172, 0.1);
+        }
+
+        /* Header Hero Section */
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("bg2.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            color: #fae5ac;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #fff;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Great Vibes', cursive;
+            color: var(--accent);
+        }
+
+        .hero {
+            height: 60vh;
+            background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(48, 30, 3, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(173, 85, 26, 0.5);
+            color: var(--light);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light);
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+            margin: 15px auto;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--light);
+            font-size: 1.2rem;
+        }
+        
+        .contact-item h4 {
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(189, 130, 63, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            text-align: center;
+        }
+        
+        .social-title {
+            color: var(--light);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .social-subtitle {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-10px) scale(1.1);
+            color: var(--light);
+        }
+        
+        .social-icon.facebook:hover {
+            background: #3b5998;
+        }
+        
+        .social-icon.instagram:hover {
+            background: #e1306c;
+        }
+        
+        .social-icon.whatsapp:hover {
+            background: #25D366;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animated {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+        
+        /* New decorative elements */
+        .floral-divider {
+            width: 100%;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .floral-divider::before,
+        .floral-divider::after {
+            content: "❦";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .floral-divider::before {
+            left: 30%;
+        }
+        
+        .floral-divider::after {
+            right: 30%;
+        }
+        
+        .floral-divider span {
+            display: inline-block;
+            width: 40%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 0 10px;
+        }
+        
+        /* Form enhancements */
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-header h3 {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .form-header::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        /* Refined wedding palette, typography, and responsive navigation */
+        :root {
+            --primary: #542b3b;
+            --secondary: #8c5968;
+            --accent: #a66b57;
+            --dark: #30232a;
+            --light: #fbf7f2;
+            --text: #5f5158;
+            --shadow: 0 18px 50px rgba(48, 35, 42, 0.1);
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        nav {
+            padding: 12px 0;
+            background: rgba(48, 35, 42, 0.9);
+            box-shadow: 0 8px 30px rgba(34, 20, 27, 0.16);
+            backdrop-filter: blur(14px);
+        }
+
+        nav .container {
+            min-height: 50px;
+        }
+
+        .logo {
+            font-size: 34px;
+        }
+
+        .logo span {
+            color: #e8c9bd;
+        }
+
+        .nav-links {
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            padding: 9px 15px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: #fff;
+            background: rgba(232, 201, 189, 0.18);
+        }
+
+        .mobile-menu {
+            border: 0;
+            background: transparent;
+        }
+
+        header {
+            height: 56vh;
+            min-height: 430px;
+            padding: 90px 20px 25px;
+            background-image: linear-gradient(rgba(31, 18, 25, 0.4), rgba(31, 18, 25, 0.5)), url("bg2.jpg");
+        }
+
+        header h1 {
+            margin-bottom: 12px;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+        }
+
+        header p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+        }
+
+        .hero {
+            height: 44vh;
+            min-height: 340px;
+            background-image: url("bg2.jpg");
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.8rem, 5vw, 4rem);
+        }
+
+        .hero p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.05rem;
+        }
+
+        .contact-section {
+            padding: 76px 0 90px;
+            background: linear-gradient(180deg, #fbf7f2, #f6eee8);
+        }
+
+        .section-title,
+        .contact-info h3,
+        .form-header h3,
+        .social-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title {
+            color: var(--dark);
+            font-size: clamp(2.2rem, 4vw, 3rem);
+        }
+
+        .section-title::after {
+            width: 64px;
+            height: 3px;
+            border-radius: 4px;
+        }
+
+        .contact-container {
+            align-items: stretch;
+            gap: 28px;
+        }
+
+        .contact-info,
+        .contact-form {
+            min-width: 0;
+            padding: clamp(26px, 4vw, 42px);
+            border: 1px solid rgba(84, 43, 59, 0.07);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: left;
+        }
+
+        .contact-info {
+            background: linear-gradient(145deg, #542b3b, #704354);
+            color: #fbf7f2;
+        }
+
+        .contact-info h3 {
+            color: #f2d8c8;
+            font-size: 1.8rem;
+        }
+
+        .contact-info > p {
+            color: #f3e8e3;
+            font-size: 1rem;
+        }
+
+        .contact-details {
+            margin-top: 28px;
+        }
+
+        .contact-item {
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .contact-icon {
+            flex: 0 0 46px;
+            width: 46px;
+            height: 46px;
+            margin-right: 14px;
+            background: rgba(255, 255, 255, 0.13);
+            color: #f2d8c8;
+        }
+
+        .contact-item h4 {
+            color: #f2d8c8;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .contact-item p {
+            margin: 0;
+            color: #fffaf7;
+            font-size: 0.96rem;
+        }
+
+        .contact-form {
+            background: #fff;
+        }
+
+        .form-header {
+            text-align: left;
+        }
+
+        .form-header h3 {
+            color: var(--dark);
+            font-size: 1.75rem;
+        }
+
+        .form-header::after {
+            margin: 12px 0 0;
+        }
+
+        .form-group label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            min-height: 48px;
+            border-color: #e8ddd7;
+            border-radius: 10px;
+            background: #fdfbf9;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(140, 89, 104, 0.12);
+        }
+
+        textarea.form-control {
+            min-height: 140px;
+        }
+
+        .submit-btn {
+            border-radius: 10px;
+            background: var(--primary);
+            font-family: 'DM Sans', sans-serif;
+            text-transform: none;
+            letter-spacing: 0.02em;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary);
+        }
+
+        .social-section {
+            padding: 74px 0;
+            background: linear-gradient(135deg, #542b3b, #805365);
+        }
+
+        .social-title {
+            color: #fff8f2;
+        }
+
+        .social-subtitle {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .social-icon {
+            width: 58px;
+            height: 58px;
+            font-size: 1.4rem;
+        }
+
+        footer {
+            background: #30232a;
+        }
+
+        .footer-text {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 9px 0;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 4px;
+                padding: 14px 20px 20px;
+                background: rgba(48, 35, 42, 0.98);
+                box-shadow: 0 16px 24px rgba(34, 20, 27, 0.2);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                min-width: 160px;
+            }
+
+            header {
+                min-height: 380px;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-info,
+            .contact-form {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 58px 0 68px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 24px 20px;
+                border-radius: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Elegant<span>Weddings</span></a>
+            <button class="mobile-menu" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="gal.html">Gallery</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Elegant Wedding Planner</h1>
+        <p>Your trusted partner in crafting unforgettable wedding experiences</p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animated">Let's Create Your Dream Wedding</h1>
+            <p class="animated delay-1">Contact us today to start planning the most magical day of your life</p>
+            <div class="floral-divider animated delay-2">
+                <span></span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title animated">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info animated delay-1">
+                    <h3>Our Information</h3>
+                    <p>We'd love to hear from you! Whether you're ready to start planning or just have questions, our team is here to help.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>37, Kurunegala Road, Kandy</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>078-454-3521</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>wgadissanayake@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form animated delay-2">
+                    <div class="form-header">
+                        <h3>Send Us a Message</h3>
+                    </div>
+                    <form id="weddingContactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required placeholder="Your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required placeholder="Your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="weddingDate">Wedding Date (if known)</label>
+                            <input type="date" id="weddingDate" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">How Can We Help?</label>
+                            <textarea id="message" class="form-control" required placeholder="Tell us about your dream wedding..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="social-section">
+        <div class="container">
+            <h2 class="social-title animated">Follow Our Wedding Journey</h2>
+            <p class="social-subtitle animated delay-1">Get daily inspiration, see real weddings we've planned, and connect with us on social media!</p>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/amila.sandun.100?mibextid=wwXIfr&mibextid=wwXIfr" class="social-icon facebook animated delay-1">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/amila_s_dissanayake_?igsh=YWxoczU3bXJvcTIz" class="social-icon instagram animated delay-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/94784543521" class="social-icon whatsapp animated delay-3">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2025 EverAfter Wedding Planning. All rights reserved.</p>
+            <p class="footer-text">Crafted with <i class="fas fa-heart" style="color: #e84393;"></i> in Sri Lanka</p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', function() {
+            const isOpen = navLinks.classList.toggle('active');
+            mobileMenu.setAttribute('aria-expanded', String(isOpen));
+            mobileMenu.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        });
+
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                mobileMenu.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-label', 'Open navigation menu');
+            });
+        });
+
+        document.getElementById('weddingContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Show success message with animation
+            const form = this;
+            form.style.opacity = "0.5";
+            form.style.transition = "opacity 0.5s";
+            
+            setTimeout(() => {
+                alert(`Thank you, ${name}! Your message has been sent.\nWe'll contact you at ${email} soon to discuss your wedding plans.`);
+                form.reset();
+                form.style.opacity = "1";
+            }, 500);
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Set min date for wedding date field
+            const today = new Date();
+            const minDate = new Date(today.setDate(today.getDate() + 1)).toISOString().split('T')[0];
+            document.getElementById('weddingDate').min = minDate;
+        });
+    </script>
+</body>
+</html>
